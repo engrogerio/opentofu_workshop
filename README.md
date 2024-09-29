@@ -7,8 +7,17 @@ asdf plugin add opentofu
 asdf local terramate latest
 asdf local opentofu latest
 
+## opentofu
+ - opentofu.org
+tofu init
+tofu plan
+tofu apply
 
-opentofu - opentofu.org
+
 ## terramate
 
+run tofu init on all stacks
+```
+terramate run -- tofu init
+```
 
