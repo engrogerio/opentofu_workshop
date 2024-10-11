@@ -22,7 +22,7 @@ jobs:
               with:
                 ref: ${{ github.head_ref }}
                 fetch-depth: 0
-                
+
             # install tooling
             - name: Install Terramate
               uses: terramate-io/terramate-action@v2
@@ -42,5 +42,5 @@ jobs:
               run: terramate run -- tofu init
                
             - name: Run Opentofu plan
-              run: terramate plan --tofu plan
+              run: terramate plan -- tofu plan
 
