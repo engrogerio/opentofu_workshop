@@ -29,6 +29,7 @@ jobs:
               uses: asdf-vm/actions/setup@v3
             - name: Install OpenTofu with asdf
               run: |
+                asdf plugin add opentofu
                 asdf install opentofu
             - name: List Changed Stacks
               run: terramate list --changed
