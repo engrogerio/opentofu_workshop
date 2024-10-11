@@ -22,11 +22,14 @@ jobs:
               with:
                 ref: ${{ github.head_ref }}
                 fetch-depth: 0
+                
             # install tooling
             - name: Install Terramate
               uses: terramate-io/terramate-action@v2
+
             - name: Install asdf
               uses: asdf-vm/actions/setup@v3
+
             - name: Install OpenTofu with asdf
               run: |
                 asdf plugin add opentofu
