@@ -45,5 +45,5 @@ jobs:
                
             - name: Run Opentofu plan
               if: steps.list-changed-stacks.outputs.stdout
-              run: terramate plan -- tofu plan
+              run: terramate run -- tofu plan
 
