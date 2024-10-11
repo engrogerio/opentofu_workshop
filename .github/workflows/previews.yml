@@ -24,16 +24,20 @@ jobs:
                 fetch-depth: 0
             # install tooling
             - name: Install Terramate
-              uses: terramate-io/terramate-actions@v2
+              uses: terramate-io/terramate-action@v2
             - name: Install asdf
               uses: asdf-vm/actions/setup@v3
             - name: Install OpenTofu with asdf
               run: |
-                sdf install opentofu
+                asdf plugin add opentofu
+                asdf install opentofu
+
             - name: List Changed Stacks
               run: terramate list --changed
+
             - name: Run Opentofu init
               run: terramate run -- tofu init
+               
             - name: Run Opentofu plan
               run: terramate plan --tofu plan
 
