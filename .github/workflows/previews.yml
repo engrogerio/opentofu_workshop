@@ -3,7 +3,7 @@ name: OpenTofu Preview
 on: 
     pull_request:
         branches:
-            - master
+            - main
 
 jobs:
     preview: 
@@ -31,10 +31,13 @@ jobs:
               run: |
                 asdf plugin add opentofu
                 asdf install opentofu
+
             - name: List Changed Stacks
               run: terramate list --changed
+
             - name: Run Opentofu init
               run: terramate run -- tofu init
+               
             - name: Run Opentofu plan
               run: terramate plan --tofu plan
 
